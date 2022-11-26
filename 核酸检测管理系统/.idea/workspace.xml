@@ -4,13 +4,8 @@
     <list default="true" id="13567323-b20c-4e3b-b910-231d7dd250be" name="变更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/doctor-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/doctor-login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/doctor2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/doctor2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/doctor3.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/doctor3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/organization-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/organization-login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/organization2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/organization2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/organization3.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/organization3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user1.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user2.1.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user2.1.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

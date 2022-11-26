@@ -22,21 +22,41 @@
     </div>
     <div class="content">
         <div class="login">
+            <form action="" method="post">
             <p>
                 <label for="name">姓名 : &nbsp&nbsp</label>
-                <input type="text" id="name" placeholder="请输入姓名">
+                <input type="text" id="name" placeholder="请输入姓名" name="user_name">
             </p>
             <p>
                 <label for="IDnumber">身份证:</label>
-                <input type="text" id="IDnumber" placeholder="请输入身份证号码">
+                <input type="text" id="IDnumber" placeholder="请输入身份证号码" name="user_id">
             </p>
            
             
             <div>
                 <button onclick="location='../templates/user1.html'">预约</button>
             </div>
+            <div>
+                {{result_info}}
+            </div>
+            </form>
         </div>
-
+<table>
+<tbody>
+        <tr >
+            <td>姓名</td>
+            <td>身份证</td>
+            <td>核酸码</td>
+        </tr>
+        {% for result in results %}
+        <tr>
+            <td>{{result[0]}}</td>
+            <td>{{result[1]}}</td>
+            <td>{{result[2]}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
     </div>
 
 </body>
