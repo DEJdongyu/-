@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>采样</title>
+    <link rel="stylesheet" href="css\common\bar.css">
+    <link rel="stylesheet" href="css/common/reset.css">
+    <link rel="stylesheet" href="css/user.css">
+    
+</head>
+<body>
+    <div id="across">
+        <a href="./home.html"><img src="./images/home2.png" style="height: 80px; weight:80px;margin-top: 10px;margin-left: 50px;"></a>
+        <h1 style="font-size: 300%;margin-left: 200px;">xx市核酸检测管理系统</h1>
+    </div>
+    <div id="column" class="div-column">
+        <button onclick="location='./doctor2.html'"><h1 style="color: black;text-align: center;">采样登记</h1></button>
+        <button onclick="location='./doctor3.html'"><h1 >登记记录</h1></button>
+    </div>
+    <div class="content">
+        <div class="login">
+            <p>
+                <label for="group">组号 : &nbsp&nbsp</label>
+                <input type="text" id="group" placeholder="请输入组号">
+            </p>
+            <p>
+                <label for="HSnumber">核酸码:</label>
+                <input type="text" id="HSnumber" placeholder="请输入核酸码">
+            </p>
+           
+            
+            <div>
+                <button onclick="location='./doctor2.html'">登记采样</button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

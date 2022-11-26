@@ -1,0 +1,42 @@
+#wrap{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;/*垂直排布*/
+    align-items: center;
+    justify-content: center;
+
+    background:  rgba(255,255,255,0.2) url(../images/backgrou.png);
+    background-size: cover;
+    
+   
+}
+.identity{
+    background-color:#3cc2db;
+}
+.logo{
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+#div-home{
+    display: flex;
+  
+    font-size: 36px;
+    border-radius: 30px;
+    font:bolder;
+    margin-bottom: 50px;
+float: left;
+    background-color: #ffffff;
+border-radius: 30px;
+height: 80px;
+width: 450px;
+}
+
+.div1{
+display: flex;
+
+align-items: center;
+}
