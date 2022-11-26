@@ -1,0 +1,365 @@
+Index: templates/organization3.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>检测结果</title>\r\n    <link rel=\"stylesheet\" href=\"css\\common\\bar.css\">\r\n    <link rel=\"stylesheet\" href=\"css/common/reset.css\">\r\n    <link rel=\"stylesheet\" href=\"css/user.css\">\r\n    <link rel=\"stylesheet\" href=\"css/doctor.css\">\r\n    \r\n</head>\r\n<body>\r\n    <div id=\"across\">\r\n        <a href=\"./home.html\"><img src=\"./images/home2.png\" style=\"height: 80px; weight:80px;margin-top: 10px;margin-left: 50px;\"></a>\r\n        <h1 style=\"font-size: 300%;margin-left: 200px;\">xx市核酸检测管理系统</h1>\r\n    </div>\r\n    <div id=\"column\" class=\"div-column\">\r\n        <button onclick=\"location='./organization2.html'\"><h1 >结果录入</h1></button>\r\n        <button onclick=\"location='./organization3.html'\"><h1 style=\"color: black;text-align: center;\">结果查询</h1></button>\r\n    </div>\r\n    <div class=\"content-table\">\r\n        <table>        \r\n            <tr style=\"height: 50px;\">\r\n                <td><h2>医生工号</h2></td>\r\n                <td><h2>组号</h2></td>\r\n                <td><h2>核酸码</h2></td>\r\n                <td><h2>检测结果</h2></td>\r\n                <td><h2>操作</h2></td>\r\n            </tr>\r\n            <tr class=\"tr1\">\r\n                <td>13</td>\r\n                <td>001</td>\r\n                <td>123456</td>\r\n                <td>阴性</td>\r\n                <td><button><h3>删除</h3></button></td>\r\n            </tr>\r\n            <tr class=\"tr1\">\r\n                <td>12</td>\r\n                <td>003</td>\r\n                <td>789634</td>\r\n                <td>阳性</td>\r\n                <td><button><h3>删除</h3></button></td>\r\n            </tr>\r\n            \r\n        </table>\r\n\r\n    </div>\r\n\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/organization3.html b/templates/organization3.html
+--- a/templates/organization3.html	(revision 7f2130df0b8ccec79d2c53931942594333f4b1ef)
++++ b/templates/organization3.html	(date 1669465526966)
+@@ -5,20 +5,20 @@
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>检测结果</title>
+-    <link rel="stylesheet" href="css\common\bar.css">
+-    <link rel="stylesheet" href="css/common/reset.css">
+-    <link rel="stylesheet" href="css/user.css">
+-    <link rel="stylesheet" href="css/doctor.css">
++    <link rel="stylesheet" href="../static/css/common/bar.css">
++    <link rel="stylesheet" href="../static/css/common/reset.css">
++    <link rel="stylesheet" href="../static/css/user.css">
++    <link rel="stylesheet" href="../static/css/doctor.css">
+     
+ </head>
+ <body>
+     <div id="across">
+-        <a href="./home.html"><img src="./images/home2.png" style="height: 80px; weight:80px;margin-top: 10px;margin-left: 50px;"></a>
++        <a href="../templates/home.html"><img src="../static/images/home2.png" style="height: 80px; weight:80px;margin-top: 10px;margin-left: 50px;"></a>
+         <h1 style="font-size: 300%;margin-left: 200px;">xx市核酸检测管理系统</h1>
+     </div>
+     <div id="column" class="div-column">
+-        <button onclick="location='./organization2.html'"><h1 >结果录入</h1></button>
+-        <button onclick="location='./organization3.html'"><h1 style="color: black;text-align: center;">结果查询</h1></button>
++        <button onclick="location='../templates/organization2.html'"><h1 >结果录入</h1></button>
++        <button onclick="location='../templates/organization3.html'"><h1 style="color: black;text-align: center;">结果查询</h1></button>
+     </div>
+     <div class="content-table">
+         <table>        
+Index: templates/doctor2.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>采样</title>\r\n    <link rel=\"stylesheet\" href=\"css\\common\\bar.css\">\r\n    <link rel=\"stylesheet\" href=\"css/common/reset.css\">\r\n    <link rel=\"stylesheet\" href=\"css/user.css\">\r\n    \r\n</head>\r\n<body>\r\n    <div id=\"across\">\r\n        <a href=\"./home.html\"><img src=\"./images/home2.png\" style=\"height: 80px; weight:80px;margin-top: 10px;margin-left: 50px;\"></a>\r\n        <h1 style=\"font-size: 300%;margin-left: 200px;\">xx市核酸检测管理系统</h1>\r\n    </div>\r\n    <div id=\"column\" class=\"div-column\">\r\n        <button onclick=\"location='./doctor2.html'\"><h1 style=\"color: black;text-align: center;\">采样登记</h1></button>\r\n        <button onclick=\"location='./doctor3.html'\"><h1 >登记记录</h1></button>\r\n    </div>\r\n    <div class=\"content\">\r\n        <div class=\"login\">\r\n            <p>\r\n                <label for=\"group\">组号 : &nbsp&nbsp</label>\r\n                <input type=\"text\" id=\"group\" placeholder=\"请输入组号\">\r\n            </p>\r\n            <p>\r\n                <label for=\"HSnumber\">核酸码:</label>\r\n                <input type=\"text\" id=\"HSnumber\" placeholder=\"请输入核酸码\">\r\n            </p>\r\n           \r\n            \r\n            <div>\r\n                <button onclick=\"location='./doctor2.html'\">登记采样</button>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/doctor2.html b/templates/doctor2.html
+--- a/templates/doctor2.html	(revision 7f2130df0b8ccec79d2c53931942594333f4b1ef)
++++ b/templates/doctor2.html	(date 1669465177359)
+@@ -5,19 +5,19 @@
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>采样</title>
+-    <link rel="stylesheet" href="css\common\bar.css">
+-    <link rel="stylesheet" href="css/common/reset.css">
+-    <link rel="stylesheet" href="css/user.css">
++    <link rel="stylesheet" href="../static/css/common/bar.css">
++    <link rel="stylesheet" href="../static/css/common/reset.css">
++    <link rel="stylesheet" href="../static/css/user.css">
+     
+ </head>
+ <body>
+     <div id="across">
+-        <a href="./home.html"><img src="./images/home2.png" style="height: 80px; weight:80px;margin-top: 10px;margin-left: 50px;"></a>
++        <a href="../templates/home.html"><img src="../static/images/home2.png" style="height: 80px; weight:80px;margin-top: 10px;margin-left: 50px;"></a>
+         <h1 style="font-size: 300%;margin-left: 200px;">xx市核酸检测管理系统</h1>
+     </div>
+     <div id="column" class="div-column">
+-        <button onclick="location='./doctor2.html'"><h1 style="color: black;text-align: center;">采样登记</h1></button>
+-        <button onclick="location='./doctor3.html'"><h1 >登记记录</h1></button>
++        <button onclick="location='../templates/doctor2.html'"><h1 style="color: black;text-align: center;">采样登记</h1></button>
++        <button onclick="location='../templates/doctor3.html'"><h1 >登记记录</h1></button>
+     </div>
+     <div class="content">
+         <div class="login">
+@@ -32,7 +32,7 @@
+            
+             
+             <div>
+-                <button onclick="location='./doctor2.html'">登记采样</button>
++                <button onclick="location='../templates/doctor2.html'">登记采样</button>
+             </div>
+         </div>
+ 
+Index: templates/user1.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>预约</title>\r\n    <link rel=\"stylesheet\" href=\"css\\common\\bar.css\">\r\n    <link rel=\"stylesheet\" href=\"css/common/reset.css\">\r\n    <link rel=\"stylesheet\" href=\"css/user.css\">\r\n    \r\n</head>\r\n<body>\r\n    <div id=\"across\">\r\n        <a href=\"./home.html\"><img src=\"./images/home2.png\" style=\"height: 80px; weight:80px;margin-top: 10px;margin-left: 50px;\"></a>\r\n        <h1 style=\"font-size: 300%;margin-left: 200px;\">xx市核酸检测管理系统</h1>\r\n    </div>\r\n    <div id=\"column\" class=\"div-column\">\r\n        <button onclick=\"location='./user1.html'\"><h1 style=\"color: black;text-align: center;\">用户登记</h1></button>\r\n        <button onclick=\"location='./user2.html'\"><h1 >删除/查询</h1></button>\r\n        <button onclick=\"location='./user3.html'\"><h1>检测结果</h1></button>\r\n    </div>\r\n    <div class=\"content\">\r\n        <div class=\"login\">\r\n            <p>\r\n                <label for=\"name\">姓名 : &nbsp&nbsp</label>\r\n                <input type=\"text\" id=\"name\" placeholder=\"请输入姓名\">\r\n            </p>\r\n            <p>\r\n                <label for=\"IDnumber\">身份证:</label>\r\n                <input type=\"text\" id=\"IDnumber\" placeholder=\"请输入身份证号码\">\r\n            </p>\r\n           \r\n            \r\n            <div>\r\n                <button onclick=\"location='./user1.html'\">预约</button>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/user1.html b/templates/user1.html
+--- a/templates/user1.html	(revision 7f2130df0b8ccec79d2c53931942594333f4b1ef)
++++ b/templates/user1.html	(date 1669465659309)
+@@ -5,20 +5,20 @@
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>预约</title>
+-    <link rel="stylesheet" href="css\common\bar.css">
+-    <link rel="stylesheet" href="css/common/reset.css">
+-    <link rel="stylesheet" href="css/user.css">
++    <link rel="stylesheet" href="../static/css/common/bar.css">
++    <link rel="stylesheet" href="../static/css/common/reset.css">
++    <link rel="stylesheet" href="../static/css/user.css">
+     
+ </head>
+ <body>
+     <div id="across">
+-        <a href="./home.html"><img src="./images/home2.png" style="height: 80px; weight:80px;margin-top: 10px;margin-left: 50px;"></a>
++        <a href="../templates/home.html"><img src="../static/images/home2.png" style="height: 80px; weight:80px;margin-top: 10px;margin-left: 50px;"></a>
+         <h1 style="font-size: 300%;margin-left: 200px;">xx市核酸检测管理系统</h1>
+     </div>
+     <div id="column" class="div-column">
+-        <button onclick="location='./user1.html'"><h1 style="color: black;text-align: center;">用户登记</h1></button>
+-        <button onclick="location='./user2.html'"><h1 >删除/查询</h1></button>
+-        <button onclick="location='./user3.html'"><h1>检测结果</h1></button>
++        <button onclick="location='../templates/user1.html'"><h1 style="color: black;text-align: center;">用户登记</h1></button>
++        <button onclick="location='../templates/user2.html'"><h1 >删除/查询</h1></button>
++        <button onclick="location='../templates/user3.html'"><h1>检测结果</h1></button>
+     </div>
+     <div class="content">
+         <div class="login">
+@@ -33,7 +33,7 @@
+            
+             
+             <div>
+-                <button onclick="location='./user1.html'">预约</button>
++                <button onclick="location='../templates/user1.html'">预约</button>
+             </div>
+         </div>
+ 
+Index: templates/organization2.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>录入结果</title>\r\n    <link rel=\"stylesheet\" href=\"css\\common\\bar.css\">\r\n    <link rel=\"stylesheet\" href=\"css/common/reset.css\">\r\n    <link rel=\"stylesheet\" href=\"css/user.css\">\r\n    \r\n</head>\r\n<body>\r\n    <div id=\"across\">\r\n        <a href=\"./home.html\"><img src=\"./images/home2.png\" style=\"height: 80px; weight:80px;margin-top: 10px;margin-left: 50px;\"></a>\r\n        <h1 style=\"font-size: 300%;margin-left: 200px;\">xx市核酸检测管理系统</h1>\r\n    </div>\r\n    <div id=\"column\" class=\"div-column\">\r\n        <button onclick=\"location='./organization2.html'\"><h1 style=\"color: black;text-align: center;\">结果录入</h1></button>\r\n        <button onclick=\"location='./organization3.html'\"><h1 >结果查询</h1></button>\r\n    </div>\r\n    <div class=\"content\">\r\n        <div class=\"login\">\r\n            <p>\r\n                <label for=\"HSnumber\">核酸码 : &nbsp&nbsp</label>\r\n                <input type=\"text\" id=\"HSnumber\" placeholder=\"请输入核酸码\">\r\n            </p>\r\n            <p>\r\n                <label for=\"HSresult\">检测结果:</label>\r\n                <input type=\"text\" id=\"HSresult;\" placeholder=\"请输入检测结果\">\r\n            </p>\r\n           \r\n            \r\n            <div>\r\n                <button onclick=\"location='./organization2.html'\">录入</button>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/organization2.html b/templates/organization2.html
+--- a/templates/organization2.html	(revision 7f2130df0b8ccec79d2c53931942594333f4b1ef)
++++ b/templates/organization2.html	(date 1669465451464)
+@@ -5,19 +5,19 @@
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>录入结果</title>
+-    <link rel="stylesheet" href="css\common\bar.css">
+-    <link rel="stylesheet" href="css/common/reset.css">
+-    <link rel="stylesheet" href="css/user.css">
++    <link rel="stylesheet" href="../static/css/common/bar.css">
++    <link rel="stylesheet" href="../static/css/common/reset.css">
++    <link rel="stylesheet" href="../static/css/user.css">
+     
+ </head>
+ <body>
+     <div id="across">
+-        <a href="./home.html"><img src="./images/home2.png" style="height: 80px; weight:80px;margin-top: 10px;margin-left: 50px;"></a>
++        <a href="../templates/home.html"><img src="../static/images/home2.png" style="height: 80px; weight:80px;margin-top: 10px;margin-left: 50px;"></a>
+         <h1 style="font-size: 300%;margin-left: 200px;">xx市核酸检测管理系统</h1>
+     </div>
+     <div id="column" class="div-column">
+-        <button onclick="location='./organization2.html'"><h1 style="color: black;text-align: center;">结果录入</h1></button>
+-        <button onclick="location='./organization3.html'"><h1 >结果查询</h1></button>
++        <button onclick="location='../templates/organization2.html'"><h1 style="color: black;text-align: center;">结果录入</h1></button>
++        <button onclick="location='../templates/organization3.html'"><h1 >结果查询</h1></button>
+     </div>
+     <div class="content">
+         <div class="login">
+@@ -32,7 +32,7 @@
+            
+             
+             <div>
+-                <button onclick="location='./organization2.html'">录入</button>
++                <button onclick="location='../templates/organization2.html'">录入</button>
+             </div>
+         </div>
+ 
+Index: templates/doctor-login.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>医生登录</title>\r\n    <link rel=\"stylesheet\" href=\"css\\common\\bar.css\">\r\n    <link rel=\"stylesheet\" href=\"css/common/reset.css\">\r\n    <link rel=\"stylesheet\" href=\"css/user.css\">\r\n    \r\n</head>\r\n<body>\r\n    <div id=\"across\">\r\n        <a href=\"./home.html\"><img src=\"./images/home2.png\" style=\"height: 80px; weight:80px;margin-top: 10px;margin-left: 50px;\"></a>\r\n        <h1 style=\"font-size: 300%;margin-left: 200px;\">xx市核酸检测管理系统</h1>\r\n    </div>\r\n    <div id=\"column\" class=\"div-column\">\r\n        <button onclick=\"location='./doctor-login.html'\"><h1 style=\"color: black;text-align: center;\">医生登录</h1></button>\r\n        \r\n    </div>\r\n    <div class=\"content\">\r\n        <div class=\"login\">\r\n            <p>\r\n                <label for=\"Doctor-name\">医生姓名:</label>\r\n                <input type=\"text\" id=\"Doctor-name\" placeholder=\"请输入姓名\">\r\n            </p>\r\n            <p>\r\n                <label for=\"Doctor-number\">医生工号:</label>\r\n                <input type=\"text\" id=\"Doctor-number\" placeholder=\"请输入工号\">\r\n            </p>\r\n           \r\n            \r\n            <div>\r\n                <button onclick=\"location='doctor2.html'\">登录</button>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/doctor-login.html b/templates/doctor-login.html
+--- a/templates/doctor-login.html	(revision 7f2130df0b8ccec79d2c53931942594333f4b1ef)
++++ b/templates/doctor-login.html	(date 1669465319350)
+@@ -5,18 +5,18 @@
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>医生登录</title>
+-    <link rel="stylesheet" href="css\common\bar.css">
+-    <link rel="stylesheet" href="css/common/reset.css">
+-    <link rel="stylesheet" href="css/user.css">
++    <link rel="stylesheet" href="../static/css/common/bar.css">
++    <link rel="stylesheet" href="../static/css/common/reset.css">
++    <link rel="stylesheet" href="../static/css/user.css">
+     
+ </head>
+ <body>
+     <div id="across">
+-        <a href="./home.html"><img src="./images/home2.png" style="height: 80px; weight:80px;margin-top: 10px;margin-left: 50px;"></a>
++        <a href="../templates/home.html"><img src="../static/images/home2.png" style="height: 80px; weight:80px;margin-top: 10px;margin-left: 50px;"></a>
+         <h1 style="font-size: 300%;margin-left: 200px;">xx市核酸检测管理系统</h1>
+     </div>
+     <div id="column" class="div-column">
+-        <button onclick="location='./doctor-login.html'"><h1 style="color: black;text-align: center;">医生登录</h1></button>
++        <button onclick="location='../templates/doctor-login.html'"><h1 style="color: black;text-align: center;">医生登录</h1></button>
+         
+     </div>
+     <div class="content">
+@@ -32,7 +32,7 @@
+            
+             
+             <div>
+-                <button onclick="location='doctor2.html'">登录</button>
++                <button onclick="location='../templates/doctor2.html'">登录</button>
+             </div>
+         </div>
+ 
+Index: templates/organization-login.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>机构登录</title>\r\n    <link rel=\"stylesheet\" href=\"css\\common\\bar.css\">\r\n    <link rel=\"stylesheet\" href=\"css/common/reset.css\">\r\n    <link rel=\"stylesheet\" href=\"css/user.css\">\r\n    \r\n</head>\r\n<body>\r\n    <div id=\"across\">\r\n        <a href=\"./home.html\"><img src=\"./images/home2.png\" style=\"height: 80px; weight:80px;margin-top: 10px;margin-left: 50px;\"></a>\r\n        <h1 style=\"font-size: 300%;margin-left: 200px;\">xx市核酸检测管理系统</h1>\r\n    </div>\r\n    <div id=\"column\" class=\"div-column\">\r\n        <button onclick=\"location='./doctor-login.html'\"><h1 style=\"color: black;text-align: center;\">机构登录</h1></button>\r\n        \r\n    </div>\r\n    <div class=\"content\">\r\n        <div class=\"login\">\r\n            <p>\r\n                <label for=\"org-name\">机构名称:</label>\r\n                <input type=\"text\" id=\"org-name\" placeholder=\"请输入名称\">\r\n            </p>\r\n            <p>\r\n                <label for=\"org-number\">机构编号:</label>\r\n                <input type=\"text\" id=\"org-number\" placeholder=\"请输入编号\">\r\n            </p>\r\n           \r\n            \r\n            <div>\r\n                <button onclick=\"location='organization2.html'\">登录</button>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/organization-login.html b/templates/organization-login.html
+--- a/templates/organization-login.html	(revision 7f2130df0b8ccec79d2c53931942594333f4b1ef)
++++ b/templates/organization-login.html	(date 1669465581194)
+@@ -5,18 +5,18 @@
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>机构登录</title>
+-    <link rel="stylesheet" href="css\common\bar.css">
+-    <link rel="stylesheet" href="css/common/reset.css">
+-    <link rel="stylesheet" href="css/user.css">
++    <link rel="stylesheet" href="../static/css/common/bar.css">
++    <link rel="stylesheet" href="../static/css/common/reset.css">
++    <link rel="stylesheet" href="../static/css/user.css">
+     
+ </head>
+ <body>
+     <div id="across">
+-        <a href="./home.html"><img src="./images/home2.png" style="height: 80px; weight:80px;margin-top: 10px;margin-left: 50px;"></a>
++        <a href="../templates/home.html"><img src="../static/images/home2.png" style="height: 80px; weight:80px;margin-top: 10px;margin-left: 50px;"></a>
+         <h1 style="font-size: 300%;margin-left: 200px;">xx市核酸检测管理系统</h1>
+     </div>
+     <div id="column" class="div-column">
+-        <button onclick="location='./doctor-login.html'"><h1 style="color: black;text-align: center;">机构登录</h1></button>
++        <button onclick="location='../templates/doctor-login.html'"><h1 style="color: black;text-align: center;">机构登录</h1></button>
+         
+     </div>
+     <div class="content">
+@@ -32,7 +32,7 @@
+            
+             
+             <div>
+-                <button onclick="location='organization2.html'">登录</button>
++                <button onclick="location='../templates/organization2.html'">登录</button>
+             </div>
+         </div>
+ 
+Index: templates/doctor3.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>采样记录</title>\r\n    <link rel=\"stylesheet\" href=\"css\\common\\bar.css\">\r\n    <link rel=\"stylesheet\" href=\"css/common/reset.css\">\r\n    <link rel=\"stylesheet\" href=\"css/user.css\">\r\n    <link rel=\"stylesheet\" href=\"css/doctor.css\">\r\n    \r\n</head>\r\n<body>\r\n    <div id=\"across\">\r\n        <a href=\"./home.html\"><img src=\"./images/home2.png\" style=\"height: 80px; weight:80px;margin-top: 10px;margin-left: 50px;\"></a>\r\n        <h1 style=\"font-size: 300%;margin-left: 200px;\">xx市核酸检测管理系统</h1>\r\n    </div>\r\n    <div id=\"column\" class=\"div-column\">\r\n        <button onclick=\"location='./doctor2.html'\"><h1 >采样登记</h1></button>\r\n        <button onclick=\"location='./doctor3.html'\"><h1 style=\"color: black;text-align: center;\">登记记录</h1></button>\r\n    </div>\r\n    <div class=\"content-table\">\r\n        <table>        \r\n            <tr style=\"height: 50px;\">\r\n                <td><h2>医生工号</h2></td>\r\n                <td><h2>组号</h2></td>\r\n                <td><h2>核酸码</h2></td>\r\n                <td><h2>操作</h2></td>\r\n            </tr>\r\n            <tr class=\"tr1\">\r\n                <td>13</td>\r\n                <td>001</td>\r\n                <td>123456</td>\r\n                <td><button><h3>删除</h3></button></td>\r\n            </tr>\r\n            <tr class=\"tr1\">\r\n                <td>12</td>\r\n                <td>003</td>\r\n                <td>789634</td>\r\n                <td><button><h3>删除</h3></button></td>\r\n            </tr>\r\n            \r\n        </table>\r\n\r\n    </div>\r\n\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/doctor3.html b/templates/doctor3.html
+--- a/templates/doctor3.html	(revision 7f2130df0b8ccec79d2c53931942594333f4b1ef)
++++ b/templates/doctor3.html	(date 1669465249481)
+@@ -5,20 +5,20 @@
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>采样记录</title>
+-    <link rel="stylesheet" href="css\common\bar.css">
+-    <link rel="stylesheet" href="css/common/reset.css">
+-    <link rel="stylesheet" href="css/user.css">
+-    <link rel="stylesheet" href="css/doctor.css">
++    <link rel="stylesheet" href="../static/css/common/bar.css">
++    <link rel="stylesheet" href="../static/css/common/reset.css">
++    <link rel="stylesheet" href="../static/css/user.css">
++    <link rel="stylesheet" href="../static/css/doctor.css">
+     
+ </head>
+ <body>
+     <div id="across">
+-        <a href="./home.html"><img src="./images/home2.png" style="height: 80px; weight:80px;margin-top: 10px;margin-left: 50px;"></a>
++        <a href="../templates/home.html"><img src="../static/images/home2.png" style="height: 80px; weight:80px;margin-top: 10px;margin-left: 50px;"></a>
+         <h1 style="font-size: 300%;margin-left: 200px;">xx市核酸检测管理系统</h1>
+     </div>
+     <div id="column" class="div-column">
+-        <button onclick="location='./doctor2.html'"><h1 >采样登记</h1></button>
+-        <button onclick="location='./doctor3.html'"><h1 style="color: black;text-align: center;">登记记录</h1></button>
++        <button onclick="location='../templates/doctor2.html'"><h1 >采样登记</h1></button>
++        <button onclick="location='../templates/doctor3.html'"><h1 style="color: black;text-align: center;">登记记录</h1></button>
+     </div>
+     <div class="content-table">
+         <table>        
+Index: server.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from flask import Flask,render_template\r\n\r\napp = Flask(__name__)\r\n\r\n\r\n@app.route(\"/\")\r\ndef index():\r\n    return render_template(\"home.html\")\r\n\r\nif __name__ == \"__main__\":\r\n    app.run()\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/server.py b/server.py
+--- a/server.py	(revision 7f2130df0b8ccec79d2c53931942594333f4b1ef)
++++ b/server.py	(date 1669452930491)
+@@ -1,4 +1,4 @@
+-from flask import Flask,render_template
++from flask import Flask, render_template
+ 
+ app = Flask(__name__)
+ 
+@@ -7,5 +7,6 @@
+ def index():
+     return render_template("home.html")
+ 
++
+ if __name__ == "__main__":
+     app.run()
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"13567323-b20c-4e3b-b910-231d7dd250be\" name=\"变更\" comment=\"\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2I4mdFQg9K6o1SCrrJL3baLxvIk\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/static\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\Day\\核酸检测管理系统\\static\" />\r\n      <recent name=\"D:\\Day\\核酸检测管理系统\\templates\" />\r\n      <recent name=\"D:\\Day\\核酸检测管理系统\" />\r\n      <recent name=\"D:\\Day\\核酸检测管理系统\\static\\images\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Python.server\">\r\n    <configuration default=\"true\" type=\"PythonConfigurationType\" factoryName=\"Python\">\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n        <env name=\"Path\" value=\"&quot;D:\\Day\\python\\venv\\Scripts\\chromedriver.exe&quot;\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"D:\\Day\\pythonProject\\venv\\Scripts\\python.exe\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <module name=\"\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"flask2\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"核酸检测管理系统\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n        <env name=\"Path\" value=\"&quot;D:\\Day\\python\\venv\\Scripts\\chromedriver.exe&quot;\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"D:\\Day\\pythonProject\\venv\\Scripts\\python.exe\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/../python/爬虫\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/../python/爬虫/flask2.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"server\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"核酸检测管理系统\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n        <env name=\"Path\" value=\"&quot;D:\\Day\\python\\venv\\Scripts\\chromedriver.exe&quot;\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"D:\\Day\\pythonProject\\venv\\Scripts\\python.exe\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/server.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Python.server\" />\r\n        <item itemvalue=\"Python.flask2\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"应用程序级\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"默认任务\">\r\n      <changelist id=\"13567323-b20c-4e3b-b910-231d7dd250be\" name=\"变更\" comment=\"\" />\r\n      <created>1669449315124</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1669449315124</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 7f2130df0b8ccec79d2c53931942594333f4b1ef)
++++ b/.idea/workspace.xml	(date 1669465581225)
+@@ -1,7 +1,16 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="13567323-b20c-4e3b-b910-231d7dd250be" name="变更" comment="" />
++    <list default="true" id="13567323-b20c-4e3b-b910-231d7dd250be" name="变更" comment="">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/templates/doctor-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/doctor-login.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/templates/doctor2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/doctor2.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/templates/doctor3.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/doctor3.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/templates/organization-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/organization-login.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/templates/organization2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/organization2.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/templates/organization3.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/organization3.html" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -14,10 +23,14 @@
+       </list>
+     </option>
+   </component>
++  <component name="Git.Settings">
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
++  </component>
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+   </component>
+   <component name="ProjectId" id="2I4mdFQg9K6o1SCrrJL3baLxvIk" />
++  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
