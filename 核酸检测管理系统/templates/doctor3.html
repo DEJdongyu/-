@@ -20,30 +20,45 @@
         <button onclick="location='../templates/doctor2.html'"><h1 >采样登记</h1></button>
         <button onclick="location='../templates/doctor3.html'"><h1 style="color: black;text-align: center;">登记记录</h1></button>
     </div>
-    <div class="content-table">
-        <table>        
-            <tr style="height: 50px;">
-                <td><h2>医生工号</h2></td>
-                <td><h2>组号</h2></td>
-                <td><h2>核酸码</h2></td>
-                <td><h2>操作</h2></td>
-            </tr>
-            <tr class="tr1">
-                <td>13</td>
-                <td>001</td>
-                <td>123456</td>
-                <td><button><h3>删除</h3></button></td>
-            </tr>
-            <tr class="tr1">
-                <td>12</td>
-                <td>003</td>
-                <td>789634</td>
-                <td><button><h3>删除</h3></button></td>
-            </tr>
-            
-        </table>
+   <div class="content">
+        <div class="login">
+            <form action="" method="post">
 
-    </div>
+            <p>
+                <label for="HSnumber">核酸码:</label>
+                <input type="text" id="HSnumber" placeholder="请输入核酸码" name="user_code">
+            </p>
+
+            <div>
+                <button style="background-color: rgb(200, 36, 36);">删除</button>
+            </div>
+            </form>
+            <table>
+<tbody>
+        <tr >
+            <td>姓名</td>
+            <td>身份证</td>
+            <td>核酸码</td>
+            <td>医生工号</td>
+            <td>医生姓名</td>
+            <td>组号</td>
+        </tr>
+        {% for result in results %}
+        <tr>
+            <td>{{result[0]}}</td>
+            <td>{{result[1]}}</td>
+            <td>{{result[2]}}</td>
+            <td>{{result[3]}}</td>
+            <td>{{result[4]}}</td>
+            <td>{{result[5]}}</td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+        </div>
+   </div>
+
 
 </body>
 </html>

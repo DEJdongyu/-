@@ -21,19 +21,26 @@
     </div>
     <div class="content">
         <div class="login">
+            <form action="" method="post">
+            <p>
+                <label for="Doctor-number">医生工号:</label>
+                <input type="text" id="Doctor-number" placeholder="请输入医生工号" name="doctor_id">
+            </p>
+
             <p>
                 <label for="group">组号 : &nbsp&nbsp</label>
-                <input type="text" id="group" placeholder="请输入组号">
+                <input type="text" id="group" placeholder="请输入组号" name="group_id">
             </p>
             <p>
                 <label for="HSnumber">核酸码:</label>
-                <input type="text" id="HSnumber" placeholder="请输入核酸码">
+                <input type="text" id="HSnumber" placeholder="请输入核酸码" name="user_code">
             </p>
            
             
             <div>
                 <button onclick="location='../templates/doctor2.html'">登记采样</button>
             </div>
+            </form>
         </div>
 
     </div>
