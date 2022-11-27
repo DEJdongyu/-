@@ -249,8 +249,8 @@ def organization3():
         print(user_code)
         results = ''
         try:
-            sql_select = "select user_name,user_id,organizations.user_code,organization_id,organization_name,group_id" \
-                         " from organizations,users where organizations.user_code = users.user_code and organizations.user_code ='" + \
+            sql_select = "select user_name,user_id,user_code,group_id,doctor_id,doctor_name,result" \
+                         " from users,doctors where users.user_code = doctors.user_code and doctors.user_code ='" + \
                          user_code + "';"
             cursor.execute(sql_select)
         except Exception as err:
@@ -262,7 +262,7 @@ def organization3():
         results = (cursor.fetchone())
         print(results)
         sql_select = "delete " \
-                     " from organizations where user_code = '" + \
+                     " from doctors where user_code = '" + \
                      user_code + "';"
         cursor.execute(sql_select)
         db.commit()
