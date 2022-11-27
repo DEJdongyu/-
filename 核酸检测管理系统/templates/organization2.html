@@ -21,19 +21,21 @@
     </div>
     <div class="content">
         <div class="login">
+            <form action="" method="post">
             <p>
                 <label for="HSnumber">核酸码 : &nbsp&nbsp</label>
-                <input type="text" id="HSnumber" placeholder="请输入核酸码">
+                <input type="text" id="HSnumber" placeholder="请输入核酸码" name="user_code">
             </p>
             <p>
                 <label for="HSresult">检测结果:</label>
-                <input type="text" id="HSresult;" placeholder="请输入检测结果">
+                <input type="text" id="HSresult;" placeholder="请输入检测结果" name="result">
             </p>
            
             
             <div>
                 <button onclick="location='../templates/organization2.html'">录入</button>
             </div>
+        </form>
         </div>
 
     </div>

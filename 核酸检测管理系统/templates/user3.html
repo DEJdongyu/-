@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../static/css\common\bar.css">
     <link rel="stylesheet" href="../static/css/common/reset.css">
     <link rel="stylesheet" href="../static/css/user.css">
+    <link rel="stylesheet" href="../static/css/doctor.css">
     
 </head>
 <body>
@@ -22,21 +23,40 @@
     </div>
     <div class="content">
         <div class="login">
+            <form action="" method="post">
             <p>
                 <label for="name">姓名 : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
-                <input type="text" id="name" placeholder="请输入姓名">
+                <input type="text" id="name" placeholder="请输入姓名" name="user_name">
             </p>
             <p>
                 <label for="IDnumber">身份证:&nbsp&nbsp&nbsp&nbsp</label>
-                <input type="text" id="IDnumber" placeholder="请输入身份证号码">
+                <input type="text" id="IDnumber" placeholder="请输入身份证号码" name="user_id">
             </p>
-            <p>
-                <label for="IDnumber" >核酸结果:</label>
-                <input type="text" id="HSresult" placeholder="点击查询后显示">
-            </p>
+            
             <div>
                 <button style="margin-left:45% ;">查询</button>
             </div>
+        </form>
+        <table>
+            <tbody>
+              <tr>
+                <td>姓名</td>
+                <td>身份证</td>
+                <td>核酸码</td>
+                <td>检测机构</td>
+               <!-- <td>检测时间</td>-->
+                <td>检测结果</td>
+              </tr>
+              <tr>
+                <td>{{results[0]}}</td>
+                <td>{{results[1]}}</td>
+                <td>{{results[2]}}</td>
+                <td>{{results[3]}}</td>
+                <td>{{results[4]}}</td>
+               <!--<td>{{results[5]}}</td>--> 
+              </tr>
+            </tbody>
+          </table>
         </div>
 
     </div>
