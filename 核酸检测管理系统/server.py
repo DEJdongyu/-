@@ -145,8 +145,10 @@ def doctor2():
 
     try:
         sql_select = "insert into doctors(doctor_name,doctor_id,group_id,user_code)  values(%s,%s,%s,%s)"
-        cursor.execute(sql_select, (doctor_name, doctor_id, group_id, user_code))
-        insert_result = "成功查询结果" + ''.join(doctor_name) + doctor_id + group_id + user_code
+        cursor.execute(
+            sql_select, (doctor_name, doctor_id, group_id, user_code))
+        insert_result = "成功查询结果" + \
+            ''.join(doctor_name) + doctor_id + group_id + user_code
         print("查询成功")
     except Exception as err:
         print(err)
@@ -186,6 +188,35 @@ def doctor3():
     else:
         results = ''
         return flask.render_template('doctor3.html', results=results)
+
+
+@app.route("/templates/doctor-login.html", methods=["GET", "POST"])
+def doctor_login():
+    results = ''
+    if flask.request.method == 'POST':
+        doctor_name = flask.request.values.get("doctor_name", "")
+        doctor_id = flask.request.values.get("doctor_id", "")
+        # 防止sql注入,如:select * from admin where admin_name = '' or 1=1 -- and password='';
+        # 利用正则表达式进行输入判断
+        if doctor_name != None and doctor_id != None:  # 验证通过
+            msg = '用户名或id错误'
+            # 正则验证通过后与数据库中数据进行比较
+            sql = "select * from doctors where doctor_name='" + \
+                  doctor_name + "' and doctor_id='" + doctor_id + "';"
+            cursor.execute(sql)
+            results = cursor.fetchone()
+            # print(results)
+            # 匹配得到结果即管理员数据库中存在此管理员
+            if results:
+                # 登陆成功
+                # return
+                return flask.redirect(flask.url_for('doctor2'))
+                # return flask.redirect('/file')
+        else:  # 输入验证不通过
+            msg = '非法输入'
+    else:
+        msg = ''
+    return flask.render_template('doctor-login.html', results=results)
 
 
 if __name__ == "__main__":
