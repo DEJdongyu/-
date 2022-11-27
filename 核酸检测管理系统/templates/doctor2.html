@@ -1,49 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>采样</title>
-    <link rel="stylesheet" href="../static/css/common/bar.css">
-    <link rel="stylesheet" href="../static/css/common/reset.css">
-    <link rel="stylesheet" href="../static/css/user.css">
-    
-</head>
-<body>
+    <link rel="stylesheet" href="../static/css/common/bar.css" />
+    <link rel="stylesheet" href="../static/css/common/reset.css" />
+    <link rel="stylesheet" href="../static/css/user.css" />
+  </head>
+  <body>
     <div id="across">
-        <a href="../templates/home.html"><img src="../static/images/home2.png" style="height: 80px; weight:80px;margin-top: 10px;margin-left: 50px;"></a>
-        <h1 style="font-size: 300%;margin-left: 200px;">xx市核酸检测管理系统</h1>
+      <a href="../templates/home.html"
+        ><img
+          src="../static/images/home2.png"
+          style="
+            height: 80px;
+            weight: 80px;
+            margin-top: 10px;
+            margin-left: 50px;
+          "
+      /></a>
+      <h1 style="font-size: 300%; margin-left: 200px">xx市核酸检测管理系统</h1>
     </div>
     <div id="column" class="div-column">
-        <button onclick="location='../templates/doctor2.html'"><h1 style="color: black;text-align: center;">采样登记</h1></button>
-        <button onclick="location='../templates/doctor3.html'"><h1 >登记记录</h1></button>
+      <button onclick="location='../templates/doctor2.html'">
+        <h1 style="color: black; text-align: center">采样登记</h1>
+      </button>
+      <button onclick="location='../templates/doctor3.html'">
+        <h1>登记记录</h1>
+      </button>
     </div>
     <div class="content">
-        <div class="login">
-            <form action="" method="post">
-            <p>
-                <label for="Doctor-number">医生工号:</label>
-                <input type="text" id="Doctor-number" placeholder="请输入医生工号" name="doctor_id">
-            </p>
+      <div class="login">
+        <form action="" method="post">
+          <p>
+            <label for="Doctor-number">医生工号:</label>
+            <input
+              type="text"
+              id="Doctor-number"
+              placeholder="请输入医生工号"
+              name="doctor_id"
+            />
+          </p>
 
-            <p>
-                <label for="group">组号 : &nbsp&nbsp</label>
-                <input type="text" id="group" placeholder="请输入组号" name="group_id">
-            </p>
-            <p>
-                <label for="HSnumber">核酸码:</label>
-                <input type="text" id="HSnumber" placeholder="请输入核酸码" name="user_code">
-            </p>
-           
-            
-            <div>
-                <button onclick="location='../templates/doctor2.html'">登记采样</button>
-            </div>
-            </form>
-        </div>
+          <p>
+            <label for="group">组号 : &nbsp&nbsp</label>
+            <input
+              type="text"
+              id="group"
+              placeholder="请输入组号"
+              name="group_id"
+            />
+          </p>
+          <p>
+            <label for="HSnumber">核酸码:</label>
+            <input
+              type="text"
+              id="HSnumber"
+              placeholder="请输入核酸码"
+              name="user_code"
+            />
+          </p>
 
+          <div>
+            <button onclick="location='../templates/doctor2.html'">
+              登记采样
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
-
-</body>
+  </body>
 </html>

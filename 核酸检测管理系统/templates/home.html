@@ -1,38 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>首页</title>
-    <link rel="stylesheet" href="../static/css/common/reset.css">
-    <link rel="stylesheet" href="../static/css/home.css">
-    <link rel="stylesheet" href="../static/css/common/bar.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../static/css/common/reset.css" />
+    <link rel="stylesheet" href="../static/css/home.css" />
+    <link rel="stylesheet" href="../static/css/common/bar.css" />
+  </head>
+  <body>
     <div id="across">
-        <a href="../templates/home.html"><img src="../static/images/home2.png" style="height: 80px; weight:80px;margin-top: 10px;margin-left: 50px;"></a>
-        <h1 style="font-size: 300%;margin-left: 50px;">xx市核酸检测管理系统</h1>
+      <a href="../templates/home.html"
+        ><img
+          src="../static/images/home2.png"
+          style="
+            height: 80px;
+            weight: 80px;
+            margin-top: 10px;
+            margin-left: 50px;
+          "
+      /></a>
+      <h1 style="font-size: 300%; margin-left: 50px">xx市核酸检测管理系统</h1>
     </div>
     <div id="wrap">
-        <div style="background-color: #3cc2db;border-radius :30px;width: 450px;">
-        <h1 style="text-align: center;">请选择您的身份</h1>
-        <br>
+      <div style="background-color: #3cc2db; border-radius: 30px; width: 450px">
+        <h1 style="text-align: center">请选择您的身份</h1>
+        <br />
         <div id="div-home">
-            <img src="../static/images/gerentouxiang.png" class="logo">
-           <div class="div1"> <a href="../templates/user1.html"> <button ><h1>我是受检者</h1></button></a></div>
+          <img src="../static/images/gerentouxiang.png" class="logo" />
+          <div class="div1">
+            <a href="../templates/user1.html">
+              <button><h1>我是受检者</h1></button></a
+            >
+          </div>
+        </div>
+        <div id="div-home">
+          <img src="../static/images/hesuanjiance.png" class="logo" />
+          <button onclick="location='templates/doctor-login.html'">
+            <div class="div1"><h1>我是采样工作人员</h1></div>
+          </button>
+        </div>
 
-        </div>
         <div id="div-home">
-            <img src="../static/images/hesuanjiance.png" class="logo">
-            <button onclick="location='templates/doctor-login.html'"><div class="div1"><h1>我是采样工作人员</h1></div></button>
+          <img src="../static/images/chanpinleibie-09.png" class="logo" />
+          <button onclick="location='templates/organization-login.html'">
+            <div class="div1"><h1>我是检测机构</h1></div>
+          </button>
         </div>
-       
-        <div id="div-home">
-            <img src="../static/images/chanpinleibie-09.png" class="logo">
-            <button onclick="location='templates/organization-login.html'"><div class="div1"><h1>我是检测机构</h1></div></button>
-        </div>
+      </div>
     </div>
-    </div>
-</body>
+  </body>
 </html>
