@@ -123,7 +123,7 @@ def doctor_login():
     return flask.render_template('doctor-login.html', results=results)
 
 
-@app.route("/templates/doctor2.html",methods=["GET", "POST"])
+@app.route("/templates/doctor2.html", methods=["GET", "POST"])
 def doctor2():
     doctor_id = flask.request.values.get("doctor_id", "")
     group_id = flask.request.values.get("group_id", "")
@@ -145,7 +145,7 @@ def doctor2():
 
     try:
         sql_select = "insert into doctors(doctor_name,doctor_id,group_id,user_code)  values(%s,%s,%s,%s)"
-        cursor.execute(sql_select,(doctor_name,doctor_id,group_id,user_code))
+        cursor.execute(sql_select, (doctor_name, doctor_id, group_id, user_code))
         insert_result = "成功查询结果" + ''.join(doctor_name) + doctor_id + group_id + user_code
         print("查询成功")
     except Exception as err:
@@ -155,7 +155,37 @@ def doctor2():
         pass
     db.commit()
     results = cursor.fetchall()
-    return flask.render_template('doctor2.html',results=results)
+    return flask.render_template('doctor2.html', results=results)
+
+
+@app.route("/templates/doctor3.html", methods=["GET", "POST"])
+def doctor3():
+    if flask.request.method == 'POST':
+        user_code = flask.request.values.get("user_code", "")
+        print(user_code)
+        results = ''
+        try:
+            sql_select = "select user_name,user_id,doctors.user_code,doctor_id,doctor_name,group_id" \
+                         " from doctors,users where doctors.user_code = users.user_code and doctors.user_code ='" + \
+                         user_code + "';"
+            cursor.execute(sql_select)
+        except Exception as err:
+            # print(err)
+            sql_delete = ""
+            insert_result = "查询结果失败"
+            pass
+        db.commit()
+        results = (cursor.fetchone())
+        print(results)
+        sql_select = "delete " \
+                     " from doctors where user_code = '" + \
+                     user_code + "';"
+        cursor.execute(sql_select)
+        db.commit()
+        return flask.render_template('doctor3.html', results=results)
+    else:
+        results = ''
+        return flask.render_template('doctor3.html', results=results)
 
 
 if __name__ == "__main__":

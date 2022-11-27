@@ -23,7 +23,6 @@
    <div class="content">
         <div class="login">
             <form action="" method="post">
-
             <p>
                 <label for="HSnumber">核酸码:</label>
                 <input type="text" id="HSnumber" placeholder="请输入核酸码" name="user_code">
@@ -43,17 +42,16 @@
             <td>医生姓名</td>
             <td>组号</td>
         </tr>
-        {% for result in results %}
         <tr>
-            <td>{{result[0]}}</td>
-            <td>{{result[1]}}</td>
-            <td>{{result[2]}}</td>
-            <td>{{result[3]}}</td>
-            <td>{{result[4]}}</td>
-            <td>{{result[5]}}</td>
+            <td>{{results[0]}}</td>
+            <td>{{results[1]}}</td>
+            <td>{{results[2]}}</td>
+            <td>{{results[3]}}</td>
+            <td>{{results[4]}}</td>
+            <td>{{results[5]}}</td>
 
         </tr>
-        {% endfor %}
+
     </tbody>
 </table>
         </div>
