@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 import flask
 import pymysql
+import datetime
 import re
 
 app = flask.Flask(__name__)
@@ -12,6 +13,9 @@ db = pymysql.connect(host='localhost', port=3306, user='root',
 cursor = db.cursor()
 # 存储登陆用户的名字用户其它网页的显示
 users = []
+now = datetime.datetime.now()
+now = now.strftime("%Y%m%d")
+print(now)
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -30,7 +34,7 @@ def user1():
         # 获取输入的学生信息
         user_id = flask.request.values.get("user_id", "")
         user_name = flask.request.values.get("user_name", "")
-        user_code = user_id + user_id[::-1]
+        user_code = user_id + now
         print(user_id, user_name, user_code)
 
         try:
@@ -90,11 +94,12 @@ def user3():
         insert_result = "查询结果失败"
         pass
     db.commit()
-    results = cursor.fetchall()
+    results = cursor.fetchone()
+    print(results)
     return flask.render_template('user3.html', results=results)
 
 
-@app.route("/templates/organization-login.html", methods=["GET", "POST"])
+@app.route("/templates/doctor-login.html", methods=["GET", "POST"])
 def doctor_login():
     results = ''
     if flask.request.method == 'POST':
@@ -148,7 +153,7 @@ def doctor2():
         cursor.execute(
             sql_select, (doctor_name, doctor_id, group_id, user_code))
         insert_result = "成功查询结果" + \
-            ''.join(doctor_name) + doctor_id + group_id + user_code
+                        ''.join(doctor_name) + doctor_id + group_id + user_code
         print("查询成功")
     except Exception as err:
         print(err)
@@ -162,14 +167,26 @@ def doctor2():
 
 @app.route("/templates/doctor3.html", methods=["GET", "POST"])
 def doctor3():
-    if flask.request.method == 'POST':
+    if flask.request.method == 'GET':
+        sql_list = "select user_name,user_id,users.user_code,group_id,doctor_id,doctor_name,result" \
+                   " from users,doctors where users.user_code = doctors.user_code ;"
+
+        cursor.execute(sql_list)
+        results = cursor.fetchall()
+        print(results)
+        return flask.render_template('doctor3.html', results=results)
+
+    elif flask.request.method == 'POST':
         user_code = flask.request.values.get("user_code", "")
-        print(user_code)
         results = ''
         try:
-            sql_select = "select user_name,user_id,doctors.user_code,doctor_id,doctor_name,group_id" \
-                         " from doctors,users where doctors.user_code = users.user_code and doctors.user_code ='" + \
+            sql_select = "delete " \
+                         " from doctors where user_code = '" + \
                          user_code + "';"
+            cursor.execute(sql_select)
+            db.commit()
+            sql_select = "select user_name,user_id,users.user_code,group_id,doctor_id,doctor_name,result" \
+                         " from users,doctors where users.user_code = doctors.user_code ;"
             cursor.execute(sql_select)
         except Exception as err:
             # print(err)
@@ -177,17 +194,10 @@ def doctor3():
             insert_result = "查询结果失败"
             pass
         db.commit()
-        results = (cursor.fetchone())
+
+        results = (cursor.fetchall())
         print(results)
-        sql_select = "delete " \
-                     " from doctors where user_code = '" + \
-                     user_code + "';"
-        cursor.execute(sql_select)
-        db.commit()
-        return flask.render_template('doctor3.html', results=results)
-    else:
-        results = ''
-        return flask.render_template('doctor3.html', results=results)
+        return flask.render_template('organization3.html', results=results)
 
 
 @app.route("/templates/organization-login.html", methods=["GET", "POST"])
@@ -201,8 +211,8 @@ def organization_login():
         if organ_name != None and organ_id != None:  # 验证通过
             msg = '用户名或id错误'
             # 正则验证通过后与数据库中数据进行比较
-            sql = "select * from doctors where doctor_name='" + \
-                  organ_name + "' and doctor_id='" + organ_id + "';"
+            sql = "select * from organs where organ_name='" + \
+                  organ_name + "' and organ_id='" + organ_id + "';"
             cursor.execute(sql)
             results = cursor.fetchone()
             # print(results)
@@ -221,16 +231,14 @@ def organization_login():
 
 @app.route("/templates/organization2.html", methods=["GET", "POST"])
 def organization2():
-    
     user_code = flask.request.values.get("user_code", "")
-    result=flask.request.values.get("result","")
-    print(user_code,result)
-    
+    result = flask.request.values.get("result", "")
+    print(user_code, result)
 
     try:
-        sql_select = "insert into users(result) values(%s) where user_code='" + user_code + "';"
-        cursor.execute(
-            sql_select, (result))
+        sql_select = "update users set result = '" + result + "'where user_code='" + user_code + "'and result " \
+                                                                                                 "is NULL ; "
+        cursor.execute(sql_select)
         print("增加成功")
     except Exception as err:
         print(err)
@@ -244,14 +252,21 @@ def organization2():
 
 @app.route("/templates/organization3.html", methods=["GET", "POST"])
 def organization3():
-    if flask.request.method == 'POST':
+    if flask.request.method == 'GET':
+        sql_list = "select user_name,user_id,users.user_code,group_id,doctor_id,doctor_name,result" \
+                   " from users,doctors where users.user_code = doctors.user_code ;"
+
+        cursor.execute(sql_list)
+        results = cursor.fetchall()
+        print(results)
+        return flask.render_template('organization3.html', results=results)
+
+    elif flask.request.method == 'POST':
         user_code = flask.request.values.get("user_code", "")
-        print(user_code)
         results = ''
         try:
-            sql_select = "select user_name,user_id,user_code,group_id,doctor_id,doctor_name,result" \
-                         " from users,doctors where users.user_code = doctors.user_code and doctors.user_code ='" + \
-                         user_code + "';"
+            sql_select = "select user_name,user_id,users.user_code,group_id,doctor_id,doctor_name,result" \
+                         " from users,doctors where users.user_code = doctors.user_code ;"
             cursor.execute(sql_select)
         except Exception as err:
             # print(err)
@@ -259,18 +274,21 @@ def organization3():
             insert_result = "查询结果失败"
             pass
         db.commit()
-        results = (cursor.fetchone())
-        print(results)
+
         sql_select = "delete " \
                      " from doctors where user_code = '" + \
                      user_code + "';"
         cursor.execute(sql_select)
         db.commit()
+        sql_select = "update users set result = NULL where user_code = '" + user_code + "';"
+        cursor.execute(sql_select)
+        db.commit()
+        results = (cursor.fetchall())
+        print(results)
         return flask.render_template('organization3.html', results=results)
-    else:
-        results = ''
-        return flask.render_template('organization3.html', results=results)
-
+    # else:
+    #     results = ''
+    #     return flask.render_template('organization3.html', results=results)
 
 
 if __name__ == "__main__":

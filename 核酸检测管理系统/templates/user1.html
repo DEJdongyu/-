@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../static/css/common/bar.css" />
     <link rel="stylesheet" href="../static/css/common/reset.css" />
     <link rel="stylesheet" href="../static/css/user.css" />
+    <link rel="stylesheet" href="../static/css/doctor.css">
   </head>
   <body>
     <div id="across">
@@ -71,8 +72,8 @@
           </tr>
           {% for result in results %}
           <tr>
-            <td>{{result[0]}}</td>
             <td>{{result[1]}}</td>
+            <td>{{result[0]}}</td>
             <td>{{result[2]}}</td>
           </tr>
           {% endfor %}

@@ -59,14 +59,19 @@
               <td>医生姓名</td>
               <td>组号</td>
             </tr>
-            <tr>
-              <td>{{results[0]}}</td>
-              <td>{{results[1]}}</td>
-              <td>{{results[2]}}</td>
-              <td>{{results[3]}}</td>
-              <td>{{results[4]}}</td>
-              <td>{{results[5]}}</td>
-            </tr>
+            <form action="" method="get">
+                  {%for r in results%}
+              <tr>
+                <td>{{r[0]}}</td>
+                <td>{{r[1]}}</td>
+                <td>{{r[2]}}</td>
+                <td>{{r[3]}}</td>
+                <td>{{r[4]}}</td>
+                <td>{{r[5]}}</td>
+
+                  {%endfor%}
+              </tr>
+              </form>
           </tbody>
         </table>
       </div>
