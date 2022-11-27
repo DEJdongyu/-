@@ -23,6 +23,11 @@ def home():
     return render_template("home.html")
 
 
+@app.route("/home.html", methods=["GET", "POST"])
+def home1():
+    return render_template("home.html")
+
+
 @app.route("/templates/user1.html", methods=["GET", "POST"])
 def user1():
     insert_result = ''
