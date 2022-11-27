@@ -94,7 +94,7 @@ def user3():
     return flask.render_template('user3.html', results=results)
 
 
-@app.route("/templates/doctor-login.html", methods=["GET", "POST"])
+@app.route("/templates/organization-login.html", methods=["GET", "POST"])
 def doctor_login():
     results = ''
     if flask.request.method == 'POST':
@@ -190,19 +190,19 @@ def doctor3():
         return flask.render_template('doctor3.html', results=results)
 
 
-@app.route("/templates/doctor-login.html", methods=["GET", "POST"])
-def doctor_login():
+@app.route("/templates/organization-login.html", methods=["GET", "POST"])
+def organization_login():
     results = ''
     if flask.request.method == 'POST':
-        doctor_name = flask.request.values.get("doctor_name", "")
-        doctor_id = flask.request.values.get("doctor_id", "")
+        organ_name = flask.request.values.get("organ_name", "")
+        organ_id = flask.request.values.get("organ_id", "")
         # 防止sql注入,如:select * from admin where admin_name = '' or 1=1 -- and password='';
         # 利用正则表达式进行输入判断
-        if doctor_name != None and doctor_id != None:  # 验证通过
+        if organ_name != None and organ_id != None:  # 验证通过
             msg = '用户名或id错误'
             # 正则验证通过后与数据库中数据进行比较
             sql = "select * from doctors where doctor_name='" + \
-                  doctor_name + "' and doctor_id='" + doctor_id + "';"
+                  organ_name + "' and doctor_id='" + organ_id + "';"
             cursor.execute(sql)
             results = cursor.fetchone()
             # print(results)
@@ -210,13 +210,67 @@ def doctor_login():
             if results:
                 # 登陆成功
                 # return
-                return flask.redirect(flask.url_for('doctor2'))
+                return flask.redirect(flask.url_for('organization2'))
                 # return flask.redirect('/file')
         else:  # 输入验证不通过
             msg = '非法输入'
     else:
         msg = ''
-    return flask.render_template('doctor-login.html', results=results)
+    return flask.render_template('organization-login.html', results=results)
+
+
+@app.route("/templates/organization2.html", methods=["GET", "POST"])
+def organization2():
+    
+    user_code = flask.request.values.get("user_code", "")
+    result=flask.request.values.get("result","")
+    print(user_code,result)
+    
+
+    try:
+        sql_select = "insert into users(result) values(%s) where user_code='" + user_code + "';"
+        cursor.execute(
+            sql_select, (result))
+        print("增加成功")
+    except Exception as err:
+        print(err)
+        sql_delete = ""
+        insert_result = "增加失败"
+        pass
+    db.commit()
+    results = cursor.fetchall()
+    return flask.render_template('organization2.html', results=results)
+
+
+@app.route("/templates/organization3.html", methods=["GET", "POST"])
+def organization3():
+    if flask.request.method == 'POST':
+        user_code = flask.request.values.get("user_code", "")
+        print(user_code)
+        results = ''
+        try:
+            sql_select = "select user_name,user_id,organizations.user_code,organization_id,organization_name,group_id" \
+                         " from organizations,users where organizations.user_code = users.user_code and organizations.user_code ='" + \
+                         user_code + "';"
+            cursor.execute(sql_select)
+        except Exception as err:
+            # print(err)
+            sql_delete = ""
+            insert_result = "查询结果失败"
+            pass
+        db.commit()
+        results = (cursor.fetchone())
+        print(results)
+        sql_select = "delete " \
+                     " from organizations where user_code = '" + \
+                     user_code + "';"
+        cursor.execute(sql_select)
+        db.commit()
+        return flask.render_template('organization3.html', results=results)
+    else:
+        results = ''
+        return flask.render_template('organization3.html', results=results)
+
 
 
 if __name__ == "__main__":
